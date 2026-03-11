@@ -17,8 +17,8 @@ public class OrderController {
 
     // Place order
     @PostMapping
-    public Order placeOrder() {
-        return orderService.placeOrder();
+    public Order placeOrder(@RequestParam String shippingAddress) {
+        return orderService.placeOrder(shippingAddress);
     }
 
     // Get user orders

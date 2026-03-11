@@ -29,6 +29,9 @@ public class Order {
 
     private BigDecimal totalAmount;
 
+    @Column(length = 500)
+    private String shippingAddress;
+
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 

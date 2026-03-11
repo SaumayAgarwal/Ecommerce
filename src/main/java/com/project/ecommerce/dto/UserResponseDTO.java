@@ -8,14 +8,16 @@ public class UserResponseDTO {
     private String name;
     private String email;
     private String role;
+    private String address;
     private LocalDateTime createdAt;
 
     public UserResponseDTO(Long id, String name, String email,
-                           String role, LocalDateTime createdAt) {
+                           String role, String address, LocalDateTime createdAt) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.role = role;
+        this.address = address;
         this.createdAt = createdAt;
     }
 
@@ -35,6 +37,10 @@ public class UserResponseDTO {
 
     public String getRole() {
         return role;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     public LocalDateTime getCreatedAt() {

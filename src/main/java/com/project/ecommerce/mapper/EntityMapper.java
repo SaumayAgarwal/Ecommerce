@@ -24,6 +24,7 @@ public class EntityMapper {
                 user.getName(),
                 user.getEmail(),
                 user.getRole().name(),
+                user.getAddress(),
                 user.getCreatedAt()
         );
     }
@@ -50,6 +51,7 @@ public class EntityMapper {
                 order.getId(),
                 toUserDTO(order.getUser()),
                 order.getTotalAmount(),
+                order.getShippingAddress(),
                 order.getStatus().name(),
                 order.getCreatedAt(),
                 items

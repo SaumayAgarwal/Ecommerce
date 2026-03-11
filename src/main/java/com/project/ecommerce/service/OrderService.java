@@ -33,7 +33,7 @@ public class OrderService {
     }
 
     @Transactional
-    public Order placeOrder() {
+    public Order placeOrder(String shippingAddress) {
 
         User user = getCurrentUser();
 
@@ -43,11 +43,16 @@ public class OrderService {
             throw new RuntimeException("Cart is empty");
         }
 
+        if (shippingAddress == null || shippingAddress.trim().isEmpty()) {
+            throw new RuntimeException("Shipping address is required");
+        }
+
         BigDecimal totalAmount = BigDecimal.ZERO;
 
         Order order = Order.builder()
                 .user(user)
                 .totalAmount(BigDecimal.ZERO)
+                .shippingAddress(shippingAddress)
                 .build();
 
         Order savedOrder = orderRepository.save(order);

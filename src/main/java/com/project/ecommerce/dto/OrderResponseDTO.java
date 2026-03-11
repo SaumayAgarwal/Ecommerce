@@ -10,6 +10,7 @@ public class OrderResponseDTO {
     private Long id;
     private UserResponseDTO user;
     private BigDecimal totalAmount;
+    private String shippingAddress;
     private String status;
     private LocalDateTime createdAt;
     private List<OrderItemResponseDTO> orderItems;
@@ -17,12 +18,14 @@ public class OrderResponseDTO {
     public OrderResponseDTO(Long id,
                             UserResponseDTO user,
                             BigDecimal totalAmount,
+                            String shippingAddress,
                             String status,
                             LocalDateTime createdAt,
                             List<OrderItemResponseDTO> orderItems) {
         this.id = id;
         this.user = user;
         this.totalAmount = totalAmount;
+        this.shippingAddress = shippingAddress;
         this.status = status;
         this.createdAt = createdAt;
         this.orderItems = orderItems;
@@ -40,6 +43,10 @@ public class OrderResponseDTO {
 
     public BigDecimal getTotalAmount() {
         return totalAmount;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
     }
 
     public String getStatus() {
